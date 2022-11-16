@@ -81,7 +81,7 @@ echo -e "deb ${repo_url} $DIST main" > "$rootfsDir/etc/apt/sources.list"
 if [ "$DIST" == "bullseye" ]; then
     echo "deb ${repo_url} $DIST-updates main" >> "$rootfsDir/etc/apt/sources.list"
     echo "deb ${sec_repo_url} $DIST-security main" >> "$rootfsDir/etc/apt/sources.list"
-elif [ "$DIST" != "unstable" ]; then
+elif [[ ! " unstable testing bookworm " =~ " $DIST " ]]; then
     echo "deb ${sec_repo_url} $DIST/updates main" >> "$rootfsDir/etc/apt/sources.list"
 fi
 
