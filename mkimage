@@ -78,6 +78,7 @@ repo_url="http://deb.debian.org/debian"
 sec_repo_url="http://security.debian.org/"
 
 echo -e "deb ${repo_url} $DIST main" > "$rootfsDir/etc/apt/sources.list"
+# shellcheck disable=SC2076
 if [ "$DIST" == "bullseye" ]; then
     echo "deb ${repo_url} $DIST-updates main" >> "$rootfsDir/etc/apt/sources.list"
     echo "deb ${sec_repo_url} $DIST-security main" >> "$rootfsDir/etc/apt/sources.list"
