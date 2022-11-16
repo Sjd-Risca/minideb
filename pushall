@@ -8,7 +8,7 @@ DISTS="buster
 bullseye
 "
 LATEST=bullseye
-BASENAME=bitnami/minideb
+BASENAME=risca/minideb
 
 if [ -n "${DOCKER_PASSWORD:-}" ]; then
     docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
